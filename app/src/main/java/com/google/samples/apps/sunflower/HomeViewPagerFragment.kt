@@ -38,6 +38,7 @@ class HomeViewPagerFragment : Fragment() {
         val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
+        val trick = binding.tvTrick
 
         viewPager.adapter = SunflowerPagerAdapter(this)
 
@@ -48,6 +49,9 @@ class HomeViewPagerFragment : Fragment() {
         }.attach()
 
         (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+
+        trick.setOnClickListener {
+        }
 
         return binding.root
     }

@@ -57,6 +57,7 @@
                     app:layout_collapseMode="parallax">
 
                 <TextView
+                    android:id="@+id/tv_trick"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:gravity="center"
