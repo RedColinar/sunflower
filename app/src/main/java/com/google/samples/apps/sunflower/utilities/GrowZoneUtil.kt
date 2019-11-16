@@ -19,7 +19,7 @@ package com.google.samples.apps.sunflower.utilities
 import kotlin.math.abs
 
 /**
- * A helper function to determine a Plant's growing zone for a given latitude.
+ * AnswerSelect helper function to determine a Plant's growing zone for a given latitude.
  *
  * The numbers listed here are roughly based on the United States Department of Agriculture's
  * Plant Hardiness Zone Map (http://planthardiness.ars.usda.gov/), which helps determine which

@@ -13,17 +13,160 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/risk_background_1">
+
+        <ImageView
+            android:id="@+id/iv_family_1"
+            imageFromUrl="@{viewModel.singleAvatar}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="150dp"
+            android:onClick="@{viewModel::clickAvatar}"
+            app:layout_constraintEnd_toStartOf="@+id/iv_family_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            isGone="@{viewModel.family != 1}"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_select"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_family_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_1" />
+
+        <ImageView
+            android:id="@+id/iv_family_2"
+            imageFromUrl="@{`https://web.insnail.com/images/demandEvaluate/DEV4Question20.png?20171128`}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="@{viewModel::clickAvatar}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_family_1"
+            app:layout_constraintTop_toTopOf="@id/iv_family_1" />
+
+        <ImageView
+            isGone="@{viewModel.family != 2}"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_select"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_family_2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_2" />
+
+        <ImageView
+            android:id="@+id/iv_family_3"
+            imageFromUrl="@{viewModel.oneParentAvatar}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:onClick="@{viewModel::clickAvatar}"
+            app:layout_constraintEnd_toStartOf="@+id/iv_family_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_family_1" />
+
+        <ImageView
+            isGone="@{viewModel.family != 3}"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_select"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_family_3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_3" />
+
+        <ImageView
+            android:id="@+id/iv_family_4"
+            imageFromUrl="@{`https://web.insnail.com/images/demandEvaluate/DEV4Question11.png?20171128`}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="@{viewModel::clickAvatar}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_family_3"
+            app:layout_constraintTop_toTopOf="@id/iv_family_3" />
+
+        <ImageView
+            isGone="@{viewModel.family != 4}"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_select"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_family_4"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_4" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="2"
-            android:textSize="200dp" />
-    </FrameLayout>
+            android:text="单身"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_family_1"
+            app:layout_constraintStart_toStartOf="@+id/iv_family_1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_1"
+            android:textColor="@color/sunflower_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="已婚无小孩"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_family_2"
+            app:layout_constraintStart_toStartOf="@+id/iv_family_2"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_2"
+            android:textColor="@color/sunflower_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@{viewModel.sex == 1 ? `单亲爸爸` : `单亲妈妈`}"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_family_3"
+            app:layout_constraintStart_toStartOf="@+id/iv_family_3"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_3"
+            android:textColor="@color/sunflower_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="已婚有小孩"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintTop_toBottomOf="@+id/iv_family_4"
+            app:layout_constraintStart_toStartOf="@+id/iv_family_4"
+            app:layout_constraintEnd_toEndOf="@+id/iv_family_4"
+            android:textColor="@color/sunflower_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="家里成员有哪些？"
+            android:textColor="@color/sunflower_white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="家有几口，保障不缺失"
+            android:textColor="@color/sunflower_white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel" />
+    </data>
 </layout>

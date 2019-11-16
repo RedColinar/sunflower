@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.risk
+package com.google.samples.apps.sunflower.risk.data
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil.setContentView
-import com.google.samples.apps.sunflower.R
-import com.google.samples.apps.sunflower.databinding.ActivityRiskHostBinding
+data class Answer(
+    val A: AnswerSelect,
+    val index: Int,
+    val questionId: String,
+    val questionStr: String
+)
 
-/**
- * Created by panqiang at 2019-11-14
- */
-class RiskHostActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView<ActivityRiskHostBinding>(this, R.layout.activity_risk_host)
-    }
-}
+data class AnswerSelect(
+    var answer: String,
+    var answerStr: String
+)

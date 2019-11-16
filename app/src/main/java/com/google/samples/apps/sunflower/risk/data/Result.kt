@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower.risk
-
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil.setContentView
-import com.google.samples.apps.sunflower.R
-import com.google.samples.apps.sunflower.databinding.ActivityRiskHostBinding
+package com.google.samples.apps.sunflower.risk.data
 
 /**
- * Created by panqiang at 2019-11-14
+ * Created by panqiang at 2019-11-15
  */
-class RiskHostActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView<ActivityRiskHostBinding>(this, R.layout.activity_risk_host)
-    }
-}
+data class Result<T>(
+    var list: List<T>? = null,
+    var message: String = "",
+    var params: Any? = null,
+    var result: T? = null,
+    var status: Int = 0,
+    var tag: Any? = null
+)

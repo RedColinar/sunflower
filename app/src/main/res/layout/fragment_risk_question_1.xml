@@ -15,10 +15,54 @@
   -->
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/risk_background_1">
+
+        <ImageView
+            android:id="@+id/iv_sex_male"
+            imageFromUrl="@{`https://web.insnail.com/images/demandEvaluate/DEV4Question19.png?20171128`}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="150dp"
+            android:onClick="@{viewModel::clickAvatar}"
+            app:layout_constraintEnd_toStartOf="@+id/iv_sex_female"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            isGone="@{viewModel.sex != 1}"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_select"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sex_male"
+            app:layout_constraintEnd_toEndOf="@+id/iv_sex_male" />
+
+        <ImageView
+            android:id="@+id/iv_sex_female"
+            imageFromUrl="@{`https://web.insnail.com/images/demandEvaluate/DEV4Question32.png?20171128`}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="150dp"
+            android:onClick="@{viewModel::clickAvatar}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_sex_male"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            isGone="@{viewModel.sex != 2}"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_select"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sex_female"
+            app:layout_constraintEnd_toEndOf="@+id/iv_sex_female" />
 
         <TextView
             android:id="@+id/title"
@@ -43,32 +87,5 @@
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
-
-        <ImageView
-            android:id="@+id/iv_sex_male"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/ic_sex_male"
-            app:layout_constraintEnd_toStartOf="@+id/iv_sex_female"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:src="@drawable/ic_select"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_sex_male"
-            app:layout_constraintEnd_toEndOf="@+id/iv_sex_male" />
-
-        <ImageView
-            android:id="@+id/iv_sex_female"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="150dp"
-            android:src="@drawable/ic_sex_female"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_sex_male"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

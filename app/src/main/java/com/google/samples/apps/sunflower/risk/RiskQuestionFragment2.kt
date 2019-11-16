@@ -20,28 +20,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.google.samples.apps.sunflower.databinding.FragmentRiskQuestion1Binding
+import androidx.lifecycle.ViewModelProviders
 import com.google.samples.apps.sunflower.databinding.FragmentRiskQuestion2Binding
-import com.google.samples.apps.sunflower.databinding.FragmentRiskQuestion3Binding
+import com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel
 
-/**
- * Created by panqiang at 2019-11-14
- */
-class RiskQuestionFragment(private val index: Int) : Fragment() {
-
+class RiskQuestionFragment2: Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val viewDataBinding: ViewDataBinding = when (index) {
-            0 -> FragmentRiskQuestion1Binding.inflate(inflater, container, false)
-            1 -> FragmentRiskQuestion2Binding.inflate(inflater, container, false)
-            2 -> FragmentRiskQuestion3Binding.inflate(inflater, container, false)
-            else -> FragmentRiskQuestion1Binding.inflate(inflater, container, false)
-        }
-        return viewDataBinding.root
+        val viewModel = ViewModelProviders.of(parentFragment!!).get(RiskQuestionViewModel::class.java)
+        val binding = FragmentRiskQuestion2Binding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+        return binding.root
     }
 }

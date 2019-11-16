@@ -37,7 +37,7 @@ import com.google.samples.apps.sunflower.utilities.InjectorUtils
 import com.google.samples.apps.sunflower.viewmodels.PlantDetailViewModel
 
 /**
- * A fragment representing a single Plant detail screen.
+ * AnswerSelect fragment representing a single Plant detail screen.
  */
 class PlantDetailFragment : Fragment() {
 

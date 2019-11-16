@@ -29,7 +29,7 @@ class PlantTest {
     private lateinit var plant: Plant
 
     @Before fun setUp() {
-        plant = Plant("1", "Tomato", "A red vegetable", 1, 2, "")
+        plant = Plant("1", "Tomato", "AnswerSelect red vegetable", 1, 2, "")
     }
 
     @Test fun test_default_values() {
