@@ -28,4 +28,5 @@
     <color name="sunflower_yellow_500">#ffff63</color>
 
     <color name="risk_background_1">#2C334E</color>
+    <color name="risk_accent">#17C3D2</color>
 </resources>

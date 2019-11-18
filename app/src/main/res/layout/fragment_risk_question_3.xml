@@ -13,17 +13,113 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/risk_background_1">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="家人生日是什么时候？"
+            android:textColor="@color/sunflower_white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:text="记录生日，精确计算保费"
+            android:textColor="@color/sunflower_white"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <EditText
+            android:id="@+id/et_year"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="200dp"
+            android:backgroundTint="@color/risk_accent"
             android:gravity="center"
-            android:text="3"
-            android:textSize="200dp" />
-    </FrameLayout>
+            android:text="@{viewModel.parentBirthYear}"
+            android:textColor="@color/sunflower_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_year_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年"
+            android:textColor="@color/sunflower_white"
+            app:layout_constraintBottom_toBottomOf="@id/et_year"
+            app:layout_constraintStart_toEndOf="@id/et_year"
+            app:layout_constraintTop_toTopOf="@id/et_year" />
+
+        <EditText
+            android:id="@+id/et_month"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/risk_accent"
+            android:gravity="center"
+            android:text="@{viewModel.parentBirthMonth}"
+            android:textColor="@color/sunflower_white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_year_label"
+            app:layout_constraintStart_toEndOf="@id/tv_year_label"
+            app:layout_constraintTop_toTopOf="@id/tv_year_label" />
+
+        <TextView
+            android:id="@+id/tv_month_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月"
+            android:textColor="@color/sunflower_white"
+            app:layout_constraintBottom_toBottomOf="@id/et_month"
+            app:layout_constraintStart_toEndOf="@id/et_month"
+            app:layout_constraintTop_toTopOf="@id/et_month" />
+
+        <EditText
+            android:id="@+id/et_day"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/risk_accent"
+            android:gravity="center"
+            android:text="@{viewModel.parentBirthDay}"
+            android:textColor="@color/sunflower_white"
+            app:layout_constraintBottom_toBottomOf="@id/tv_month_label"
+            app:layout_constraintStart_toEndOf="@id/tv_month_label"
+            app:layout_constraintTop_toTopOf="@id/tv_month_label" />
+
+        <TextView
+            android:id="@+id/tv_day_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日"
+            android:textColor="@color/sunflower_white"
+            app:layout_constraintBottom_toBottomOf="@id/et_day"
+            app:layout_constraintStart_toEndOf="@id/et_day"
+            app:layout_constraintTop_toTopOf="@id/et_day" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

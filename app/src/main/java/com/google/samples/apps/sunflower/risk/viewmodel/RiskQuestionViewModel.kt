@@ -25,6 +25,7 @@ import androidx.lifecycle.ViewModel
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.risk.data.Answer
 import com.google.samples.apps.sunflower.risk.data.AnswerSelect
+import java.util.*
 
 class RiskQuestionViewModel : ViewModel() {
 
@@ -32,6 +33,10 @@ class RiskQuestionViewModel : ViewModel() {
     val sex = ObservableInt(0)
     /** 单身 1 已婚无孩 2 已婚有孩 3 单亲妈妈/爸爸 4 */
     val family = ObservableInt(0)
+
+    val parentBirthYear = ObservableInt(1986)
+    val parentBirthMonth = ObservableInt(1)
+    val parentBirthDay = ObservableInt(1)
 
     val singleAvatar = ObservableField<String>("")
     val oneParentAvatar = ObservableField<String>("")

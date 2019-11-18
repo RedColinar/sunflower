@@ -16,7 +16,26 @@
 
 package com.google.samples.apps.sunflower.risk
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
+import com.google.samples.apps.sunflower.databinding.FragmentRiskQuestion3Binding
+import com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel
 
-class RiskQuestionFragment3: Fragment() {
+class RiskQuestionFragment3 : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val viewModel =
+            ViewModelProviders.of(parentFragment!!).get(RiskQuestionViewModel::class.java)
+        val binding = FragmentRiskQuestion3Binding.inflate(inflater, container, false)
+        binding.viewModel = viewModel
+        return binding.root
+    }
 }
