@@ -25,7 +25,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.samples.apps.sunflower.databinding.FragmentRiskQuestion4Binding
 import com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel
 
-class RiskQuestionFragment4: Fragment() {
+class RiskQuestionFragment4 : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +36,18 @@ class RiskQuestionFragment4: Fragment() {
             ViewModelProviders.of(parentFragment!!).get(RiskQuestionViewModel::class.java)
         val binding = FragmentRiskQuestion4Binding.inflate(inflater, container, false)
         binding.viewModel = viewModel
+        binding.tagLayout.tags.clear()
+        binding.tagLayout.addTags(
+            listOf(
+                TagLayout.Item("asdasdasdasdasdas", "adsasdasd"),
+                TagLayout.Item("yereyereryer", "adsasdasd"),
+                TagLayout.Item("lhlhlhj,,nm,n,nm,nm,nm,", "adsasdasd"),
+                TagLayout.Item("sfdsdfsdfsdfsdfbdfgg", "adsasdasd"),
+                TagLayout.Item("89789789789789", "adsasdasd"),
+                TagLayout.Item("askvbnvbnvbnvbnvbdh", "adsasdasd"),
+                TagLayout.Item("fsdfsdgfsdgsdgssdfdsfdsfsdf", "adsasdasd")
+            )
+        )
         return binding.root
     }
 }

@@ -58,7 +58,7 @@ class RiskViewPagerFragment : Fragment() {
                 0 -> RiskQuestionFragment1()
                 1 -> RiskQuestionFragment2()
                 2 -> RiskQuestionFragment3()
-                4 -> RiskQuestionFragment4()
+                3 -> RiskQuestionFragment4()
                 else -> RiskQuestionFragment1()
             }
         }

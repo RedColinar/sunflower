@@ -34,7 +34,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="150dp"
-            android:onClick="@{viewModel.onClick()}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             app:layout_constraintEnd_toStartOf="@+id/iv_family_2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +52,7 @@
             imageFromUrl="@{`https://web.insnail.com/images/demandEvaluate/DEV4Question20.png?20171128`}"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="@{viewModel.onClick()}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_family_1"
             app:layout_constraintTop_toTopOf="@id/iv_family_1" />
@@ -71,7 +71,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="50dp"
-            android:onClick="@{viewModel.onClick()}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             app:layout_constraintEnd_toStartOf="@+id/iv_family_4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_family_1" />
@@ -89,7 +89,7 @@
             imageFromUrl="@{`https://web.insnail.com/images/demandEvaluate/DEV4Question11.png?20171128`}"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:onClick="@{viewModel.onClick()}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_family_3"
             app:layout_constraintTop_toTopOf="@id/iv_family_3" />

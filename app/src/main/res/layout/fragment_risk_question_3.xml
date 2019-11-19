@@ -129,7 +129,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="20dp"
             android:textSize="25sp"
-            android:onClick="@{viewModel.onClick()}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             android:textColor="@color/risk_accent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
