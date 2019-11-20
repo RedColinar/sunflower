@@ -25,7 +25,6 @@ import androidx.lifecycle.ViewModel
 import com.google.samples.apps.sunflower.R
 import com.google.samples.apps.sunflower.risk.data.Answer
 import com.google.samples.apps.sunflower.risk.data.AnswerSelect
-import java.util.*
 
 class RiskQuestionViewModel : ViewModel() {
 
@@ -34,12 +33,12 @@ class RiskQuestionViewModel : ViewModel() {
     /** 单身 1 已婚无孩 2 已婚有孩 3 单亲妈妈/爸爸 4 */
     val family = ObservableInt(0)
 
-    val parentBirthYear = ObservableInt(1986)
-    val parentBirthMonth = ObservableInt(1)
-    val parentBirthDay = ObservableInt(1)
+    val parentBirthYear = ObservableField<String>("1986")
+    val parentBirthMonth = ObservableField<String>("1")
+    val parentBirthDay = ObservableField<String>("1")
 
-    val singleAvatar = ObservableField<String>("")
-    val oneParentAvatar = ObservableField<String>("")
+    val singleAvatar = ObservableField<String>("https://web.insnail.com/images/demandEvaluate/DEV4Question28.png")
+    val oneParentAvatar = ObservableField<String>("https://web.insnail.com/images/demandEvaluate/DEV4Question9.png")
 
     private val a = AnswerSelect("", "")
     private val answer = Answer(a, 1, "12", "男女有别，保障不同")
@@ -61,29 +60,34 @@ class RiskQuestionViewModel : ViewModel() {
         })
     }
 
-    fun clickAvatar(avatar: View) {
-        when (avatar.id) {
+    fun onClick(view: View) {
+        when (view.id) {
             R.id.iv_sex_male -> {
                 sex.set(1)
-                a.answer = "1"
                 scrollToFragment(1)
             }
             R.id.iv_sex_female -> {
                 sex.set(2)
-                a.answer = "2"
                 scrollToFragment(1)
             }
             R.id.iv_family_1 -> {
-
+                family.set(1)
+                scrollToFragment(2)
             }
             R.id.iv_family_2 -> {
-
+                family.set(2)
+                scrollToFragment(2)
             }
             R.id.iv_family_3 -> {
-
+                family.set(4)
+                scrollToFragment(2)
             }
             R.id.iv_family_4 -> {
-
+                family.set(3)
+                scrollToFragment(2)
+            }
+            R.id.tv_birthday_confirm -> {
+                scrollToFragment(3)
             }
         }
     }
