@@ -32,7 +32,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="150dp"
-            android:onClick="@{(view) -> viewModel.onClick(view)}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             app:layout_constraintEnd_toStartOf="@+id/iv_sex_female"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="150dp"
-            android:onClick="@{(view) -> viewModel.onClick(view)}"
+            android:onClick="@{(v) -> viewModel.onClick(v)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_sex_male"
             app:layout_constraintTop_toTopOf="parent" />

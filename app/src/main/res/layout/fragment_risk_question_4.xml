@@ -16,13 +16,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,26 +46,39 @@
             app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <TextView
-            android:id="@+id/tv_tag_layout_item"
+            android:id="@+id/tv_no_sick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="150dp"
-            android:background="@color/risk_accent_light"
+            android:background="@drawable/bg_tag_layout_item"
             android:paddingStart="10dp"
-            android:paddingTop="5dp"
+            android:paddingTop="8dp"
             android:paddingEnd="10dp"
-            android:paddingBottom="5dp"
-            android:text="asdasd"
+            android:paddingBottom="8dp"
+            android:textSize="18sp"
+            android:text="无疾病"
             android:textColor="@color/sunflower_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.samples.apps.sunflower.risk.TagLayout
+            android:id="@+id/tag_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_tag_layout_item" />
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_sick" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.google.samples.apps.sunflower.risk.viewmodel.RiskQuestionViewModel" />
+    </data>
 </layout>
