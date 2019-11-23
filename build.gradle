@@ -82,3 +82,5 @@ spotless {
         ])
     }
 }
+
+// apply from: "${rootProject.projectDir}/git-hooks.gradle"
