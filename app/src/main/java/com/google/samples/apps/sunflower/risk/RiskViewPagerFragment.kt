@@ -51,7 +51,7 @@ class RiskViewPagerFragment : Fragment() {
     }
 
     class RiskViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
-        override fun getItemCount(): Int = 4
+        override fun getItemCount(): Int = 5
 
         override fun createFragment(position: Int): Fragment {
             return when (position) {
@@ -59,6 +59,7 @@ class RiskViewPagerFragment : Fragment() {
                 1 -> RiskQuestionFragment2()
                 2 -> RiskQuestionFragment3()
                 3 -> RiskQuestionFragment4()
+                4 -> RiskQuestionFragment5()
                 else -> RiskQuestionFragment1()
             }
         }

@@ -89,6 +89,9 @@ class RiskQuestionViewModel : ViewModel() {
             R.id.tv_birthday_confirm -> {
                 scrollToFragment(3)
             }
+            R.id.tv_income_confirm -> {
+                // no-op
+            }
         }
     }
 
